@@ -1,0 +1,60 @@
+1. Code
+    Code produces the correct solution to the question. There are also no runtime or compile time errors.
+    You made great work so far on your code for all problems
+    But, I could not get any output from problem 5.
+
+  - I've added print statements to printout state of blockchain, for empty, single block and three blocks.
+
+
+2. Testing
+    At least three test inputs and outputs are provided. There are at least two that test for edge cases, like null or empty inputs, or very large numbers.
+
+    You made great work so far on your code and test cases.
+    But it is required to add one more edge case to some problems.
+    For Example problem 1:
+        You added only one test case where the capacity is 5.
+        Also, it is required to add another two edge cases, you can add test cases where the capacity is NULL, negative, or high capacity.
+
+
+  - decided for our purposes to limit cache capacity to [1, 1000] range, for simplicty reasons tested for try catch blocks, instead of going unittest route, and tested bellow and above capacity limit range
+
+3. Explanation
+
+    There is a clear and accurate statement of efficiency in time and space. There is an explanation that specifically mentions parts of the code that contribute to the overall efficiency.
+
+    You made great work so far on your analysis and explanation.
+    I can see that you added time and space complexity to all your explanation files except problem 3 you need to change time complexity there.
+    Time complexity for problem3 should be O(nlog n)
+
+  - changed time complexity for problem3 to O(nlog n)
+
+
+3. problem_5.py code comments:
+    You made great work on adding more than test case.
+    But you added only one edge case where the block is empty.
+    Also, it is required to add another edge case.
+    Edge test cases in this scenario would be, for example:
+    
+        Try to create different blocks with the same timestamp
+
+  - since I'm creating gmt_ts in add method with:
+    def add(self, data):
+        gmt_ts = time.strftime('%H:%M %m/%d/%Y', time.gmtime())
+
+   since my timestamp is rather coarse, I guess vast majority of inserted test blocks will end up with same timestamp.
+
+4. problem_4.py code comments:
+    It is required to Add another edge case the group is not valid.
+
+  - added test with empty string for group
+    assert(is_user_in_group('', parent) == False)
+
+5. problem_2.py code comments:
+    You made great work so far on your code and test cases.
+    But it is required to add at least two edge cases, you can add test cases where the path is empty or invalid
+
+  - added more test cases:
+    assert(find_files('.c', '') == []) # empty path string
+    assert(find_files('.c', 'asdf') == []) # non existant path string
+    assert(find_files('', './testdir') == []) # empty suffix
+    assert(find_files('.nemame', './testdir') == []) # non existant suffix 
