@@ -26,13 +26,11 @@ def shortest_path(M,start,goal):
     start_isec = PathIsec(start)
     start_isec.cost_h += calc_euc_dist(start, goal, intersections)
     heappush(frontier, start_isec)
-    
+
     while len(explored) < len(intersections):
-        #print(f'\nstart state: {[[n.no, n.cost_g, n.cost_h] for n in frontier]}')
         isec = heappop(frontier)
         if isec.no == goal:
             break
-        #print(f'Popped: {isec.no=} {isec.cost=}')
 
         for road in roads[isec.no]:
             if road in explored:
@@ -48,15 +46,12 @@ def shortest_path(M,start,goal):
             heappush(frontier, conn_isec)
 
         explored.add(isec.no)
-        #print(f'end state: {[[n.no, n.cost] for n in frontier]}')
 
     path_length = 0
     result = []
     while isec:
-        if isec.previous: 
+        if isec.previous:
             path_length += calc_euc_dist(isec.no, isec.previous.no, intersections)
         result.append(isec.no)
         isec = isec.previous
-    #print(f'{path_length=}')
-    #print(f'direct_path={calc_euc_dist(start, goal, intersections)}')
     return result[::-1]
