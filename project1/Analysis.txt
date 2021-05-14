@@ -1,0 +1,76 @@
+Time complexity per Task
+
+Task0
+If we disregard first part of the given script
+```
+with open('texts.csv', 'r') as f:
+    reader = csv.reader(f)
+    texts = list(reader)
+
+with open('calls.csv', 'r') as f:
+    reader = csv.reader(f)
+    calls = list(reader)
+```
+
+and do time complexity analysis of student code only, then worst case time complexity is O(1)
+
+first_text = texts[0]
+last_call = calls[-1]
+
+List get item is O(1) operation - https://wiki.python.org/moin/TimeComplexity
+
+
+Task1
+Out of all code there are two for loops with dominant term of time complexity
+for text in texts:
+    phone_numbers.add(text[0])
+    phone_numbers.add(text[1])
+
+for call in calls:
+    phone_numbers.add(call[0])
+    phone_numbers.add(call[1])
+
+time complexity is O(t + c) -> O(n)
+
+
+Task2
+Out of all code most dominant is for loop in method print_max_caller, with worst case time complexity of O(n)
+
+
+Task3
+for call in calls:
+  caller_nr = call[0]
+  receiver_nr = call[1]
+one for loop all calls - O(n)
+
+
+for areacode in sorted(area_codes_called):
+  print(areacode
+Iterating through areacodes O(a) 
+sorting of area_codes_called is O(a log a)
+
+sorted - https://wiki.python.org/moin/TimeComplexity
+
+Total worst case time complexity: O(n + a log a) ~> O(n) n dominating over a 
+
+
+Task4
+Two for loops
+for call in calls:
+    possible_telemarketers.add(call[0])
+    not_telemarketers.add(call[1])
+
+for text in texts:
+    not_telemarketers.add(text[0])
+    not_telemarketers.add(text[1]
+
+O(c) + O(t)
+
+telemarketers = possible_telemarketers - not_telemarketers
+Set difference (O(len(possible_telemarketers))) - https://wiki.python.org/moin/TimeComplexity
+
+for tm in sorted(telemarketers):
+    print(tm)
+* sorting telemarketers - O(tm*logtm)
+
+Dominating worst case time complexity term: O(tm*logtm)
