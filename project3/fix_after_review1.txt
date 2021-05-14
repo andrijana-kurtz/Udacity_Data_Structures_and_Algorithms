@@ -1,0 +1,7 @@
+1. Explanation and explanation_7.md code comments:
+    For explanations of problems 5 and 7, please kindly provide separate time & space complexity analyses for each of the vital methods, viz. "insert", "find", etc, that you have used for your Trie implementations since these methods have the major contribution to the overall time and space complexity of your solution, hence they need to be analyzed separately to pass this specification.
+
+    Required
+    Please kindly provide your own complexity analysis here, and also describe separate time & space complexity analyses for each of the vital methods, viz. "insert", "find", etc, that you have used for your Trie implementations in your solution for this problem since these methods have the major contribution to the overall time and space complexity of your solution, hence they need to be analyzed separately to pass the specifications.
+
+    - appended explanation_7.md with more details on implementation, runtime and space use of vital methods. 
